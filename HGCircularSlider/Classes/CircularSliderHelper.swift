@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - Internal Structures
-internal struct Interval {
+public struct Interval {
     var min: CGFloat = 0.0
     var max: CGFloat = 0.0
     var rounds: Int
@@ -23,7 +23,7 @@ internal struct Interval {
     }
 }
 
-internal struct Circle {
+public struct Circle {
     var origin = CGPoint.zero
     var radius: CGFloat = 0
     
@@ -35,7 +35,7 @@ internal struct Circle {
     }
 }
 
-internal struct Arc {
+public struct Arc {
     
     var circle = Circle(origin: CGPoint.zero, radius: 0)
     var startAngle: CGFloat = 0.0
@@ -50,7 +50,7 @@ internal struct Arc {
 }
 
 // MARK: - Internal Extensions
-internal extension CGVector {
+public extension CGVector {
     
     /**
      Calculate the vector between two points
@@ -86,10 +86,10 @@ internal extension CGVector {
     }
 }
 
-internal extension CGRect {
+public extension CGRect {
  
     // get the center of rect (bounds or frame)
-    internal var center: CGPoint {
+    public var center: CGPoint {
         get {
             let center = CGPoint(x: midX, y: midY)
             return center
@@ -98,7 +98,7 @@ internal extension CGRect {
 }
 
 // MARK: - Internal Helper
-internal class CircularSliderHelper {
+public class CircularSliderHelper {
     
     @nonobjc static let circleMinValue: CGFloat = 0
     @nonobjc static let circleMaxValue: CGFloat = CGFloat(2 * Double.pi)
