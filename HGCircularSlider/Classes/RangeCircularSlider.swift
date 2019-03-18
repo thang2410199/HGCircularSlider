@@ -198,7 +198,7 @@ open class RangeCircularSlider: CircularSlider {
      
      - returns: true if the touched point affect the thumb, false if not.
      */
-    internal func isThumb(withCenter thumbCenter: CGPoint, containsPoint touchPoint: CGPoint) -> Bool {
+    open func isThumb(withCenter thumbCenter: CGPoint, containsPoint touchPoint: CGPoint) -> Bool {
         // the coordinates of thumb from its center
         let rect = CGRect(x: thumbCenter.x - thumbRadius, y: thumbCenter.y - thumbRadius, width: thumbRadius * 2, height: thumbRadius * 2)
         if rect.contains(touchPoint) {

@@ -62,7 +62,7 @@ extension CircularSlider {
     // MARK: drawing instance methods
 
     /// Draw the circular slider
-    internal func drawCircularSlider(inContext context: CGContext) {
+    open func drawCircularSlider(inContext context: CGContext) {
         diskColor.setFill()
         trackColor.setStroke()
 
@@ -72,7 +72,7 @@ extension CircularSlider {
     }
 
     /// draw Filled arc between start an end angles
-    internal func drawFilledArc(fromAngle startAngle: CGFloat, toAngle endAngle: CGFloat, inContext context: CGContext) {
+    open func drawFilledArc(fromAngle startAngle: CGFloat, toAngle endAngle: CGFloat, inContext context: CGContext) {
         diskFillColor.setFill()
         trackFillColor.setStroke()
 
@@ -85,7 +85,7 @@ extension CircularSlider {
         CircularSlider.drawArc(withArc: arc, lineWidth: lineWidth, mode: .stroke, inContext: context)
     }
 
-    internal func drawShadowArc(fromAngle startAngle: CGFloat, toAngle endAngle: CGFloat, inContext context: CGContext) {
+    open func drawShadowArc(fromAngle startAngle: CGFloat, toAngle endAngle: CGFloat, inContext context: CGContext) {
         trackShadowColor.setStroke()
 
         let origin = CGPoint(x: bounds.center.x + trackShadowOffset.x, y: bounds.center.y + trackShadowOffset.y)
@@ -105,7 +105,7 @@ extension CircularSlider {
      - returns: return the origin point of the thumb
      */
     @discardableResult
-    internal func drawThumb(withAngle angle: CGFloat, inContext context: CGContext) -> CGPoint {
+    open func drawThumb(withAngle angle: CGFloat, inContext context: CGContext) -> CGPoint {
         let circle = Circle(origin: bounds.center, radius: self.radius)
         let thumbOrigin = CircularSliderHelper.endPoint(fromCircle: circle, angle: angle)
         let thumbCircle = Circle(origin: thumbOrigin, radius: thumbRadius)
@@ -125,7 +125,7 @@ extension CircularSlider {
      - returns: return the origin point of the thumb
      */
     @discardableResult
-    internal func drawThumb(withImage image: UIImage, angle: CGFloat, inContext context: CGContext) -> CGPoint {
+    open func drawThumb(withImage image: UIImage, angle: CGFloat, inContext context: CGContext) -> CGPoint {
         UIGraphicsPushContext(context)
         context.beginPath()
         let circle = Circle(origin: bounds.center, radius: self.radius)
